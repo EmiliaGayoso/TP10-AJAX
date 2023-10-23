@@ -15,8 +15,8 @@ public class BD
     public static List<Temporadas> ObtenerTemporadas(int IdSerie){
         List <Temporadas> ListTemporadas = new List<Temporadas>();
         using (SqlConnection db = new SqlConnection(ConnectionString)){
-            string sql = "SELECT * FROM Temporadas WHERE IdSerie=@IdSerie";
-            ListTemporadas = db.Query<Temporadas>(sql).ToList();
+            string sql = "SELECT * FROM Temporadas WHERE IdSerie=@pIdSerie";
+            ListTemporadas = db.Query<Temporadas>(sql, new{pIdSerie=IdSerie}).ToList();
         }
         return ListTemporadas;
     }
@@ -24,16 +24,16 @@ public class BD
     public static List<Actores> ObtenerActores(int IdSerie){
         List <Actores> ListActores = new List<Actores>();
         using (SqlConnection db = new SqlConnection(ConnectionString)){
-            string sql = "SELECT * FROM Actores WHERE IdSerie=@IdSerie";
-            ListActores = db.Query<Actores>(sql).ToList();
+            string sql = "SELECT * FROM Actores WHERE IdSerie=@pIdSerie";
+            ListActores = db.Query<Actores>(sql, new{pIdSerie=IdSerie}).ToList();
         }
         return ListActores;
     }
     public static Series ObtenerMasInfo(int IdSerie){
         Series ListMasInfo = new Series();
         using (SqlConnection db = new SqlConnection(ConnectionString)){
-            string sql = "SELECT * FROM Series WHERE IdSerie=@IdSerie";
-            ListMasInfo = db.QueryFirstOrDefault<Series>(sql);
+            string sql = "SELECT * FROM Series WHERE IdSerie=@pIdSerie ";
+            ListMasInfo = db.QueryFirstOrDefault<Series>(sql, new{pIdSerie=IdSerie});
         }
         return ListMasInfo;
     }
