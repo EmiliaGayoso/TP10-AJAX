@@ -6,10 +6,11 @@
         url: '/Home/TraerTemporadas',
         data: { IdSerie: idS },
         success: function(response) {
+            $(".modal-title").html("Temporadas")
             for (let i = 0; i < response.length; i++) {
                 let temporadaDiv = $("<div class='temporada'></div>");
-                temporadaDiv.append("<p>" + response[i].numeroTemporada + "</p>");
-                temporadaDiv.append("<h3>" + response[i].titulo + "</h3>");
+                temporadaDiv.append("<p>Temporada: " + response[i].numeroTemporada + "</p>");
+                temporadaDiv.append("<h3>Titulo: " + response[i].titulo + "</h3>");
                 $("#Contenido").append(temporadaDiv);
             }
         }
@@ -25,6 +26,7 @@ function MostrarActores(idS) {
         url: '/Home/TraerActores',
         data: { IdSerie: idS },
         success: function(response) {
+            $(".modal-title").html("Actores")
             for (let i = 0; i < response.length; i++) {
                 let actorDiv = $("<div class='actor'></div>");
                 actorDiv.append("<p>" + response[i].nombre + "</p>");
@@ -43,10 +45,10 @@ function MostrarMasInfo(idS) {
         url: '/Home/MasInfo',
         data: { IdSerie: idS },
         success: function(response) {
-            $("#Contenido").append("<p>" + response.nombre + "</p>");
-            $("#Contenido").append("<p>" + response.añoInicio + "</p>");
-            $("#Contenido").append("<p>" + response.sinopsis + "</p>");
-            $("#Contenido").append("<img src='/" + response.imagenSerie + "'>");
+            $(".modal-title").html("Mas info")
+            $("#Contenido").append("<p>Nombre: " + response.nombre + "</p>");
+            $("#Contenido").append("<p>Año de inicio: " + response.añoInicio + "</p>");
+            $("#Contenido").append("<p>Sinopsis: " + response.sinopsis + "</p>");
         }
     });
 }

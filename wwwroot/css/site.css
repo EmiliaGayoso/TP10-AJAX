@@ -19,3 +19,22 @@ footer {
   bottom: 0; 
   margin: 10px 0px 20px 0px;
 }
+
+article {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-basis: calc(25%);
+}
+
+.temporada{
+  margin-bottom: 2%;
+  border: 1px solid black;
+}
+
+.actores{
+  margin-bottom: 2%;
+  border: 1px solid black;
+  text-align: center;
+}
