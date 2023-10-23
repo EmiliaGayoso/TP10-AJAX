@@ -3,3 +3,34 @@
 }
 
 <h1>TP XX - Index</h1>
+
+
+@for(int i = 0; i<ViewBag.Series.Count; i++){
+    <div class="card" style="width: 18rem;">
+        <img src="@ViewBag.Series[i].ImagenSerie" class="card-img-top" alt="...">
+        <h5 class="card-title">@ViewBag.Series[i].Nombre</h5>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalSeries" onclick="MostrarTemporadas(@ViewBag.Series[i].IdSerie)">Ver temporadas</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalSeries" onclick="MostrarActores(@ViewBag.Series[i].IdSerie)">Ver actores</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalSeries" onclick="MostrarMasInfo(@ViewBag.Series[i].IdSerie)">Mas info</button>
+    </div>
+}
+
+<!-- Modal -->
+<div class="modal fade" id="ModalSeries" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="NombreJugador">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" >&times;</span>
+                </button>
+            </div>
+            <div id="Contenido" class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

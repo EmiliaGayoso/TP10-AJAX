@@ -1,4 +1,4 @@
-namespace TP10-AJAX.Models;
+namespace TP10AJAX.Models;
 
 public class ErrorViewModel
 {

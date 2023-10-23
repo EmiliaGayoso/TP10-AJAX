@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "TP10-AJAX": {
+    "TP10AJAX": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
