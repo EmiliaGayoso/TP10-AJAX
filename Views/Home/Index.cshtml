@@ -1,9 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Index";
 }
-
-<h1>SeriesFun</h1>
-<p>watch your favourite channels</p>
+<div id='title'>
+  <h1>SeriesFun</h1>
+  <p>Watch your favourite channels</p>
+</div>
 <article>
 @for(int i = 0; i<ViewBag.Series.Count; i++){
     <div class="card" style="width: 18rem;">

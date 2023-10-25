@@ -9,8 +9,7 @@
             $(".modal-title").html("Temporadas")
             for (let i = 0; i < response.length; i++) {
                 let temporadaDiv = $("<div class='temporada'></div>");
-                temporadaDiv.append("<p>Temporada: " + response[i].numeroTemporada + "</p>");
-                temporadaDiv.append("<h3>Titulo: " + response[i].titulo + "</h3>");
+                temporadaDiv.append("<p>Temporada " + response[i].numeroTemporada + "</p>");
                 $("#Contenido").append(temporadaDiv);
             }
         }
@@ -46,9 +45,9 @@ function MostrarMasInfo(idS) {
         data: { IdSerie: idS },
         success: function(response) {
             $(".modal-title").html("Mas info")
-            $("#Contenido").append("<p>Nombre: " + response.nombre + "</p>");
-            $("#Contenido").append("<p>Año de inicio: " + response.añoInicio + "</p>");
-            $("#Contenido").append("<p>Sinopsis: " + response.sinopsis + "</p>");
+            $("#Contenido").append("<p><b>Nombre:</b> " + response.nombre + "</p>");
+            $("#Contenido").append("<p><b>Año de inicio:</b> " + response.añoInicio + "</p>");
+            $("#Contenido").append("<p><b>Sinopsis:</b> " + response.sinopsis + "</p>");
         }
     });
 }
